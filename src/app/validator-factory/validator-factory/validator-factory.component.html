@@ -1,0 +1,24 @@
+<div class="main-page">
+  <form [formGroup]="form" class="form">
+    <mat-form-field>
+      <mat-label>Alex's birthday</mat-label>
+      <input matInput formControlName="alex"/>
+      <mat-error *ngIf="form.get('alex')?.errors?.['invalidDate']">{{form.get('alex')?.errors?.['invalidDate']}} is not a valid date</mat-error>
+      <mat-error *ngIf="form.get('alex')?.errors?.['notBirthday']">{{getErrorMessage('alex')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Adrien's birthday</mat-label>
+      <input matInput formControlName="adrien"/>
+      <mat-error *ngIf="form.get('adrien')?.errors?.['invalidDate']">{{form.get('adrien')?.errors?.['invalidDate']}} is not a valid date</mat-error>
+      <mat-error *ngIf="form.get('adrien')?.errors?.['notBirthday']">{{getErrorMessage('adrien')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Josias's birthday</mat-label>
+      <input matInput formControlName="josias"/>
+      <mat-error *ngIf="form.get('josias')?.errors?.['invalidDate']">{{form.get('josias')?.errors?.['invalidDate']}} is not a valid date</mat-error>
+      <mat-error *ngIf="form.get('josias')?.errors?.['notBirthday']">{{getErrorMessage('josias')}}</mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>

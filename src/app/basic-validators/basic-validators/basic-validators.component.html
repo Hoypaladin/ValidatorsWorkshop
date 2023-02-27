@@ -1,0 +1,20 @@
+<div class="main-page">
+  <form [formGroup]="form" class="form">
+    <mat-form-field>
+      <mat-label>Required</mat-label>
+      <input matInput formControlName="required"/>
+      <mat-error *ngIf="form.get('required')?.errors">This field is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Only numbers</mat-label>
+      <input matInput formControlName="onlyNumbers"/>
+      <mat-error *ngIf="form.get('onlyNumbers')?.errors">Can only input numbers</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Max</mat-label>
+      <input matInput  formControlName="max"/>
+      <mat-error *ngIf="form.get('max')?.errors">Must not exceed 500</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
