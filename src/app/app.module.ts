@@ -12,6 +12,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { CustomValidatorComponent } from './custom-validators/custom-validator/custom-validator.component';
 import { ValidatorFactoryComponent } from './validator-factory/validator-factory/validator-factory.component';
 import { FormGroupValidatorComponent } from './form-group-validators/form-group-validator/form-group-validator.component';
+import { AsyncValidatorComponent } from './async-validators/async-validator/async-validator.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { FormGroupValidatorComponent } from './form-group-validators/form-group-
     BasicValidatorsComponent,
     CustomValidatorComponent,
     ValidatorFactoryComponent,
-    FormGroupValidatorComponent
+    FormGroupValidatorComponent,
+    AsyncValidatorComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,

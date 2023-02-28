@@ -1,0 +1,11 @@
+<div class="main-page">
+  <form [formGroup]="form" class="form">
+    <mat-form-field>
+      <mat-label>New pokemon name</mat-label>
+      <input matInput formControlName="name"/>
+      <mat-error *ngIf="form.get('name')?.errors">This pokemon already exists</mat-error>
+      <mat-spinner *ngIf="form.pending" matSuffix [diameter]="20"></mat-spinner>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="form.invalid || form.pending">Submit</button>
+  </form>
+</div>
